@@ -1,0 +1,45 @@
+{
+    "name": "hk-address-parser",
+    "version": "0.1.0",
+    "description": "The library for the HKAddressParser project",
+    "author": "",
+    "license": "",
+    "keywords": ["hk", "land", "geo-coding", "search", "map"],
+    "main": "dist/hk-address-parser.cjs.js",
+    "module": "dist/hk-address-parser.esm.js",
+    "browser": "dist/hk-address-parser.min.js",
+    "dependencies": {
+        "cross-fetch": "^3.0.1"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.3.4",
+        "@babel/plugin-transform-runtime": "^7.2.0",
+        "@babel/preset-env": "^7.3.4",
+        "@babel/register": "^7.0.0",
+        "@babel/runtime": "^7.3.4",
+        "chai": "^4.2.0",
+        "rollup": "^1.0.0",
+        "rollup-plugin-commonjs": "^9.2.0",
+        "rollup-plugin-json": "^3.1.0",
+        "rollup-plugin-node-builtins": "^2.1.2",
+        "rollup-plugin-node-resolve": "^4.0.0",
+        "rollup-plugin-terser": "^4.0.4",
+        "sinon": "^7.2.7",
+        "@turf/turf": "^5.1.6",
+        "bluebird": "^3.5.3",
+        "proj4": "^2.5.0"
+    },
+    "peerDependencies": {
+        "@turf/turf": "^5.1.6",
+        "bluebird": "^3.5.3",
+        "proj4": "^2.5.0"
+    },
+    "scripts": {
+        "build": "rollup -c",
+        "dev": "rollup -c -w",
+        "test": "BABEL_ENV=test mocha --require @babel/register"
+    },
+    "files": [
+        "dist"
+    ]
+}
