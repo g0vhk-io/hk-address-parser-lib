@@ -12,6 +12,9 @@ if (process.argv.length < 2) {
 
 const address = process.argv[2];
 
+/*
+ * =========   Trying add a layer of cache to speed up local test ===========
+ */
 function cacheFilePathForUrl(url) {
   // Base64 would return '/' but we do not want for paths
   return path.join('.cache', md5(url));
