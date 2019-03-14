@@ -1,6 +1,6 @@
 {
     "name": "hk-address-parser",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "description": "The library for the HKAddressParser project",
     "author": "",
     "license": "",
@@ -26,6 +26,7 @@
         "@turf/turf": "^5.1.6",
         "bluebird": "^3.5.3",
         "chai": "^4.2.0",
+        "md5": "^2.2.1",
         "proj4": "^2.5.0",
         "rollup": "^1.6.0",
         "rollup-plugin-commonjs": "^9.2.1",

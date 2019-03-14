@@ -2769,10 +2769,10 @@ var resolver = {
 
 
         sortedOgcioRecords.forEach(ogcioRecord => {
-            const distance$$1 = ogcioRecord.distanceTo(landRecords[0]);
+            const distance = ogcioRecord.distanceTo(landRecords[0]);
             if (ogcioRecord.distanceTo(landRecords[0]) < NEAR_THRESHOLD) {
                 // add the distance for sorting the array
-                ogcioRecord.distance = distance$$1;
+                ogcioRecord.distance = distance;
                 sortedResults.push(ogcioRecord);
                 // console.log(ogcioRecord.distanceTo(landRecords[0]) + " | " + ogcioRecord.fullAddress("chi"))
             }
@@ -2802,8 +2802,12 @@ var resolver = {
     }
 };
 
-function parse (address) {
+// named export for the parse function
+const parse = (address) => {
 	return resolver.queryAddress(address);
-}
+};
 
-export default parse;
+// named export for Address model
+const Address$1 = Address;
+
+export { parse, Address$1 as Address };

@@ -1,5 +1,7 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var turf = require('@turf/turf');
@@ -2806,8 +2808,13 @@ var resolver = {
     }
 };
 
-function parse (address) {
+// named export for the parse function
+const parse = (address) => {
 	return resolver.queryAddress(address);
-}
+};
 
-module.exports = parse;
+// named export for Address model
+const Address$1 = Address;
+
+exports.parse = parse;
+exports.Address = Address$1;

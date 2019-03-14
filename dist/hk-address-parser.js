@@ -1,8 +1,8 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('@turf/turf'), require('proj4')) :
-  typeof define === 'function' && define.amd ? define(['@turf/turf', 'proj4'], factory) :
-  (global = global || self, global['hk-address-parser'] = factory(global.turf, global.proj4));
-}(this, function (turf, proj4) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@turf/turf'), require('proj4')) :
+  typeof define === 'function' && define.amd ? define(['exports', '@turf/turf', 'proj4'], factory) :
+  (global = global || self, factory(global['hk-address-parser'] = {}, global.turf, global.proj4));
+}(this, function (exports, turf, proj4) { 'use strict';
 
   proj4 = proj4 && proj4.hasOwnProperty('default') ? proj4['default'] : proj4;
 
@@ -2711,7 +2711,7 @@
     }
     return length | 0
   }
-  Buffer$1.isBuffer = isBuffer$1;
+  Buffer$1.isBuffer = isBuffer;
   function internalIsBuffer (b) {
     return !!(b != null && b._isBuffer)
   }
@@ -3117,7 +3117,7 @@
       }
     }
 
-    function read$$1 (buf, i) {
+    function read (buf, i) {
       if (indexSize === 1) {
         return buf[i]
       } else {
@@ -3129,7 +3129,7 @@
     if (dir) {
       var foundIndex = -1;
       for (i = byteOffset; i < arrLength; i++) {
-        if (read$$1(arr, i) === read$$1(val, foundIndex === -1 ? 0 : i - foundIndex)) {
+        if (read(arr, i) === read(val, foundIndex === -1 ? 0 : i - foundIndex)) {
           if (foundIndex === -1) foundIndex = i;
           if (i - foundIndex + 1 === valLength) return foundIndex * indexSize
         } else {
@@ -3142,7 +3142,7 @@
       for (i = byteOffset; i >= 0; i--) {
         var found = true;
         for (var j = 0; j < valLength; j++) {
-          if (read$$1(arr, i + j) !== read$$1(val, j)) {
+          if (read(arr, i + j) !== read(val, j)) {
             found = false;
             break
           }
@@ -3213,7 +3213,7 @@
     return blitBuffer(utf16leToBytes(string, buf.length - offset), buf, offset, length)
   }
 
-  Buffer$1.prototype.write = function write$$1 (string, offset, length, encoding) {
+  Buffer$1.prototype.write = function write (string, offset, length, encoding) {
     // Buffer#write(string)
     if (offset === undefined) {
       encoding = 'utf8';
@@ -4177,7 +4177,7 @@
   // the following is from is-buffer, also by Feross Aboukhadijeh and with same lisence
   // The _isBuffer check is for Safari 5-7 support, because it's missing
   // Object.prototype.constructor. Remove this eventually
-  function isBuffer$1(obj) {
+  function isBuffer(obj) {
     return obj != null && (!!obj._isBuffer || isFastBuffer(obj) || isSlowBuffer(obj))
   }
 
@@ -6327,7 +6327,7 @@
       }
     }
 
-    if (isBuffer$1(buf)) {
+    if (isBuffer(buf)) {
       // This is the slow version that will work with any Buffer
       // implementation (even in old browsers)
       var arrayCopy = new Uint8Array(buf.length);
@@ -13273,7 +13273,7 @@
     Z_HUFFMAN_ONLY$1=           2,
     Z_RLE$1=                    3,
     Z_FIXED$2=                  4,
-    Z_DEFAULT_STRATEGY$1=       0,
+    Z_DEFAULT_STRATEGY=       0,
 
     /* Possible values of the data_type field (though see inflate()) */
     Z_BINARY$1=                 0,
@@ -13526,7 +13526,7 @@
     Z_HUFFMAN_ONLY: Z_HUFFMAN_ONLY$1,
     Z_RLE: Z_RLE$1,
     Z_FIXED: Z_FIXED$2,
-    Z_DEFAULT_STRATEGY: Z_DEFAULT_STRATEGY$1,
+    Z_DEFAULT_STRATEGY: Z_DEFAULT_STRATEGY,
     Z_BINARY: Z_BINARY$1,
     Z_TEXT: Z_TEXT$1,
     Z_UNKNOWN: Z_UNKNOWN$2,
@@ -15416,9 +15416,9 @@
    * @param   Request  A Request instance
    * @return  Object   The options object to be passed to http.request
    */
-  function getNodeRequestOptions(request$$1) {
-  	const parsedURL = request$$1[INTERNALS$2].parsedURL;
-  	const headers = new Headers(request$$1[INTERNALS$2].headers);
+  function getNodeRequestOptions(request) {
+  	const parsedURL = request[INTERNALS$2].parsedURL;
+  	const headers = new Headers(request[INTERNALS$2].headers);
 
   	// fetch step 1.3
   	if (!headers.has('Accept')) {
@@ -15434,17 +15434,17 @@
   		throw new TypeError('Only HTTP(S) protocols are supported');
   	}
 
-  	if (request$$1.signal && request$$1.body instanceof Stream.Readable && !streamDestructionSupported) {
+  	if (request.signal && request.body instanceof Stream.Readable && !streamDestructionSupported) {
   		throw new Error('Cancellation of streamed requests with AbortSignal is not supported in node < 8');
   	}
 
   	// HTTP-network-or-cache fetch steps 2.4-2.7
   	let contentLengthValue = null;
-  	if (request$$1.body == null && /^(POST|PUT)$/i.test(request$$1.method)) {
+  	if (request.body == null && /^(POST|PUT)$/i.test(request.method)) {
   		contentLengthValue = '0';
   	}
-  	if (request$$1.body != null) {
-  		const totalBytes = getTotalBytes(request$$1);
+  	if (request.body != null) {
+  		const totalBytes = getTotalBytes(request);
   		if (typeof totalBytes === 'number') {
   			contentLengthValue = String(totalBytes);
   		}
@@ -15459,11 +15459,11 @@
   	}
 
   	// HTTP-network-or-cache fetch step 2.15
-  	if (request$$1.compress && !headers.has('Accept-Encoding')) {
+  	if (request.compress && !headers.has('Accept-Encoding')) {
   		headers.set('Accept-Encoding', 'gzip,deflate');
   	}
 
-  	if (!headers.has('Connection') && !request$$1.agent) {
+  	if (!headers.has('Connection') && !request.agent) {
   		headers.set('Connection', 'close');
   	}
 
@@ -15471,9 +15471,9 @@
   	// chunked encoding is handled by Node.js
 
   	return Object.assign({}, parsedURL, {
-  		method: request$$1.method,
+  		method: request.method,
   		headers: exportNodeCompatibleHeaders(headers),
-  		agent: request$$1.agent
+  		agent: request.agent
   	});
   }
 
@@ -15526,19 +15526,19 @@
   	// wrap http.request into fetch
   	return new fetch$1.Promise(function (resolve, reject) {
   		// build request object
-  		const request$$1 = new Request(url, opts);
-  		const options = getNodeRequestOptions(request$$1);
+  		const request = new Request(url, opts);
+  		const options = getNodeRequestOptions(request);
 
   		const send = (options.protocol === 'https:' ? http : http).request;
-  		const signal = request$$1.signal;
+  		const signal = request.signal;
 
   		let response = null;
 
   		const abort = function abort() {
   			let error = new AbortError('The user aborted a request.');
   			reject(error);
-  			if (request$$1.body && request$$1.body instanceof Stream.Readable) {
-  				request$$1.body.destroy(error);
+  			if (request.body && request.body instanceof Stream.Readable) {
+  				request.body.destroy(error);
   			}
   			if (!response || !response.body) return;
   			response.body.emit('error', error);
@@ -15568,17 +15568,17 @@
   			clearTimeout(reqTimeout);
   		}
 
-  		if (request$$1.timeout) {
+  		if (request.timeout) {
   			req.once('socket', function (socket) {
   				reqTimeout = setTimeout(function () {
-  					reject(new FetchError(`network timeout at: ${request$$1.url}`, 'request-timeout'));
+  					reject(new FetchError(`network timeout at: ${request.url}`, 'request-timeout'));
   					finalize();
-  				}, request$$1.timeout);
+  				}, request.timeout);
   			});
   		}
 
   		req.on('error', function (err) {
-  			reject(new FetchError(`request to ${request$$1.url} failed, reason: ${err.message}`, 'system', err));
+  			reject(new FetchError(`request to ${request.url} failed, reason: ${err.message}`, 'system', err));
   			finalize();
   		});
 
@@ -15593,12 +15593,12 @@
   				const location = headers.get('Location');
 
   				// HTTP fetch step 5.3
-  				const locationURL = location === null ? null : resolve_url(request$$1.url, location);
+  				const locationURL = location === null ? null : resolve_url(request.url, location);
 
   				// HTTP fetch step 5.5
-  				switch (request$$1.redirect) {
+  				switch (request.redirect) {
   					case 'error':
-  						reject(new FetchError(`redirect mode is set to error: ${request$$1.url}`, 'no-redirect'));
+  						reject(new FetchError(`redirect mode is set to error: ${request.url}`, 'no-redirect'));
   						finalize();
   						return;
   					case 'manual':
@@ -15620,8 +15620,8 @@
   						}
 
   						// HTTP-redirect fetch step 5
-  						if (request$$1.counter >= request$$1.follow) {
-  							reject(new FetchError(`maximum redirect reached at: ${request$$1.url}`, 'max-redirect'));
+  						if (request.counter >= request.follow) {
+  							reject(new FetchError(`maximum redirect reached at: ${request.url}`, 'max-redirect'));
   							finalize();
   							return;
   						}
@@ -15629,25 +15629,25 @@
   						// HTTP-redirect fetch step 6 (counter increment)
   						// Create a new Request object.
   						const requestOpts = {
-  							headers: new Headers(request$$1.headers),
-  							follow: request$$1.follow,
-  							counter: request$$1.counter + 1,
-  							agent: request$$1.agent,
-  							compress: request$$1.compress,
-  							method: request$$1.method,
-  							body: request$$1.body,
-  							signal: request$$1.signal
+  							headers: new Headers(request.headers),
+  							follow: request.follow,
+  							counter: request.counter + 1,
+  							agent: request.agent,
+  							compress: request.compress,
+  							method: request.method,
+  							body: request.body,
+  							signal: request.signal
   						};
 
   						// HTTP-redirect fetch step 9
-  						if (res.statusCode !== 303 && request$$1.body && getTotalBytes(request$$1) === null) {
+  						if (res.statusCode !== 303 && request.body && getTotalBytes(request) === null) {
   							reject(new FetchError('Cannot follow redirect with body being a readable stream', 'unsupported-redirect'));
   							finalize();
   							return;
   						}
 
   						// HTTP-redirect fetch step 11
-  						if (res.statusCode === 303 || (res.statusCode === 301 || res.statusCode === 302) && request$$1.method === 'POST') {
+  						if (res.statusCode === 303 || (res.statusCode === 301 || res.statusCode === 302) && request.method === 'POST') {
   							requestOpts.method = 'GET';
   							requestOpts.body = undefined;
   							requestOpts.headers.delete('content-length');
@@ -15667,12 +15667,12 @@
   			let body = res.pipe(new PassThrough$1$1());
 
   			const response_options = {
-  				url: request$$1.url,
+  				url: request.url,
   				status: res.statusCode,
   				statusText: res.statusMessage,
   				headers: headers,
-  				size: request$$1.size,
-  				timeout: request$$1.timeout
+  				size: request.size,
+  				timeout: request.timeout
   			};
 
   			// HTTP-network fetch step 12.1.1.3
@@ -15686,7 +15686,7 @@
   			// 3. no Content-Encoding header
   			// 4. no content response (204)
   			// 5. content not modified response (304)
-  			if (!request$$1.compress || request$$1.method === 'HEAD' || codings === null || res.statusCode === 204 || res.statusCode === 304) {
+  			if (!request.compress || request.method === 'HEAD' || codings === null || res.statusCode === 204 || res.statusCode === 304) {
   				response = new Response(body, response_options);
   				resolve(response);
   				return;
@@ -15733,7 +15733,7 @@
   			resolve(response);
   		});
 
-  		writeToStream(req, request$$1);
+  		writeToStream(req, request);
   	});
   }
   /**
@@ -15922,10 +15922,17 @@
       }
   };
 
-  function parse$2 (address) {
+  // named export for the parse function
+  const parse$2 = (address) => {
   	return resolver.queryAddress(address);
-  }
+  };
 
-  return parse$2;
+  // named export for Address model
+  const Address$1 = Address;
+
+  exports.parse = parse$2;
+  exports.Address = Address$1;
+
+  Object.defineProperty(exports, '__esModule', { value: true });
 
 }));
