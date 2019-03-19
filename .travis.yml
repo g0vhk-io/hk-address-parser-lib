@@ -19,6 +19,6 @@ deploy:
 notifications:
   email:
     recipients:
-    - julio@packagecloud.io
+    - "$NPM_EMAIL"
     on_success: change
     on_failure: always
