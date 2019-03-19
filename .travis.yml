@@ -6,7 +6,6 @@ node_js:
 
 
 stages:
-  - test
   # Deploy to production
   - name: deploy
     if: branch = master
