@@ -12,10 +12,15 @@ env:
   - REPO=hk-address-parser-lib
   - ORG=g0vhk
 cache: npm
+# Use script instead of npm provider as it cannot auth via env variables?
 deploy:
   provider: script
   script: "./deploy.sh"
   skip_cleanup: true
+  # only on tagged builds
+  on:
+    tags: true
+# Send an email when a new version is released
 notifications:
   email:
     recipients:
