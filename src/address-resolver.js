@@ -54,9 +54,8 @@ export async function searchAddressFromLand (address) {
         }
     } catch (error) {
         // Some error on the lands data.
-        // console.error(error.message);
-        // console.error(error.stack);
-        console.error(err);
+        console.error(error.message);
+        console.error(error.stack);
         return Promise.reject(err);
     }
 
