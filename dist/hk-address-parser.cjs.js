@@ -906,13 +906,13 @@ class LandAddress extends Address{
     if (lang === Address.LANG_EN) {
       return [{
         translatedValue: this.record.nameEN,
-        key: name,
+        key: 'name',
         translatedLabel: "Name"
       }];
     } else if (lang === Address.LANG_ZH) {
       return [{
         translatedValue: this.record.nameZH,
-        key: name,
+        key: 'name',
         translatedLabel: "Name"
       }];
     }
@@ -2731,9 +2731,8 @@ async function searchAddressFromLand (address) {
         }
     } catch (error) {
         // Some error on the lands data.
-        // console.error(error.message);
-        // console.error(error.stack);
-        console.error(err);
+        console.error(error.message);
+        console.error(error.stack);
         return Promise.reject(err);
     }
 

@@ -1,28 +1,29 @@
 language: node_js
 node_js:
-  - '11'
-  - '10'
-  - '8'
-
-
+- '11'
+- '10'
+- '8'
 stages:
-  - test
-  # Deploy to production
-  - name: deploy
-    if: branch = master
-
+- test
+- name: deploy
+  if: branch = master
 env:
   global:
-    - REPO=hk-address-parser-lib
-    - ORG=g0vhk
-
+  - REPO=hk-address-parser-lib
+  - ORG=g0vhk
 cache: npm
-
-      
+# Use script instead of npm provider as it cannot auth via env variables?
 deploy:
-  provider: npm
-  email: $NPM_EMAIL
-  api_key: $NPM_API_KEY
+  provider: script
+  script: "./deploy.sh"
+  skip_cleanup: true
+  # only on tagged builds
   on:
     tags: true
-    all_branches: true
+# Send an email when a new version is released
+notifications:
+  email:
+    recipients:
+    - "$NPM_EMAIL"
+    on_success: change
+    on_failure: always
