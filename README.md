@@ -2,11 +2,11 @@
 
 ## Installation
 
-You are required to install these two dependencies yourself if they are not already in your project: 
+You are required to install these two dependencies yourself if they are not already in your project:
 ```bash
 npm i @turf/turf proj4
 ```
-Then install the address parser: 
+Then install the address parser:
 ```bash
 npm i hk-address-parser
 ```
@@ -15,7 +15,7 @@ npm i hk-address-parser
 
 ```javascript
 
-import AddressResolver from 'hk-address-parser';
+import AddressResolver from 'hk-address-parser-lib';
 
 ...
 
