@@ -47,7 +47,7 @@ function toRad(Value) {
 
 /**
  * Load the test cases from file
- * @param {string} filePath 
+ * @param {string} filePath
  */
 async function readTestCases(filePath) {
   return new Promise((resolve, reject) => {
@@ -141,12 +141,27 @@ function loadFromCache(url) {
 
 // Replace the fetch function
 const nodeFetch = global.fetch;
+const metrics = {
+  loadedFromCache: 0,
+  totalRequest: 0,
+  repeatedRequest: 0,
+  uriHash: {},
+}
+
 global.fetch = function (...args) {
   const url = args[0];
+
+  metrics.totalRequest += 1;
+  if (metrics.uriHash[url] === undefined) {
+    metrics.uriHash[url] = 1;
+  } else {
+    metrics.uriHash[url] += 1;
+  }
 
   // try to load the cached files
   const cache = loadFromCache(url);
   if (cache) {
+    metrics.loadedFromCache += 1;
     return new Promise((resolve) => {
       resolve({
         json: () => JSON.parse(cache)
@@ -169,11 +184,11 @@ global.fetch = function (...args) {
   }
 }
 
-async function main({ limit = Infinity, outputFile }) {
+async function main({ limit = Infinity, outputFile, verbose = false }) {
   return new Promise(async (resolve, reject) => {
     const startTime = moment();
     const allTestData = await readTestCases(__dirname + '/test_cases/testcases_ogcio_searchable.csv');
-    const result ={ 
+    const result ={
       total: 0
     }
 
@@ -182,7 +197,7 @@ async function main({ limit = Infinity, outputFile }) {
     if (typeof(tag) === 'string' && tag.length > 0) {
       result.tag = tag;
     }
-    
+
     result.success = 0;
     result.failed = [];
 
@@ -190,7 +205,7 @@ async function main({ limit = Infinity, outputFile }) {
       result.total += 1;
       try {
         const [address, lat, lng] = testData;
-        const jsResult = await runTest(address);      
+        const jsResult = await runTest(address);
         if (checkResult(jsResult, lat, lng)) {
           result.success += 1;
         } else {
@@ -202,20 +217,25 @@ async function main({ limit = Infinity, outputFile }) {
       }
     }, // callback
       () => {
-        log(`Finished! Total ${result.total} tests executed .`);
+        // output the result
         const timeElapsed = moment().diff(startTime, 'ms');
+        log(`Finished! Total ${result.total} tests executed .`);
         log(`Time elapsed: ${timeElapsed}ms`);
+        log(`========================================`);
+        log(`Total Request fired: ${metrics.totalRequest}`);
+        log(`Request cached: ${metrics.loadedFromCache}`);
+        log(`Repeated request: ${metrics.repeatedRequest}`);
+        log(`Average request per query: ${Math.round(metrics.totalRequest * 100/result.total) / 100}`);
         // Write to file
-        
+
         result.success_rate = `${result.success / result.total}`;
 
         if (outputFile) {
           outputResultTofile(result, outputFile);
-        } else {
+        }
+        if (verbose) {
           log(result);
         }
-        
-        
         resolve();
       })
   });
@@ -244,19 +264,18 @@ program
 program
   .description('Run the test cases')
   .option('-o, --output [file]', 'Output the test result to the file, default output to console')
-  .option('-l, --limit [n]', 'Limit the number of test cases to run')  
+  .option('-l, --limit [n]', 'Limit the number of test cases to run')
+  .option('-v, --verbose', 'Show verbose log including the failed cases')
   .parse(process.argv);
 
 
 const outputFile = program.output;
-const tag = program.tag;
-
+const verbose = program.verbose;
 // bitwise flag: | python | node |
 const limit = program.limit || Infinity;
 
-main({ limit, outputFile })
+main({ limit, outputFile, verbose })
   .then((end) => {
-    log('Done');
   })
   .catch((err) => {
     error(err);
