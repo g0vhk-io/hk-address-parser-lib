@@ -1,5 +1,7 @@
 # 香港地址解析器 Hong Kong Address Parser Lib
 
+For API document please visit [https://g0vhk-io.github.io/hk-address-parser-lib/](https://g0vhk-io.github.io/hk-address-parser-lib/)
+
 ## Installation
 
 Install library from npm directly
