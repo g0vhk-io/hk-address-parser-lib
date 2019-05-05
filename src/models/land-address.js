@@ -1,4 +1,5 @@
 import Address from './address';
+import { toFloat } from './../utils/util';
 
 export default class LandAddress extends Address{
   constructor(landRecord) {
@@ -41,15 +42,15 @@ export default class LandAddress extends Address{
 
   coordinate() {
     return {
-      lat: this.record.lat,
-      lng: this.record.lng,
+      lat: toFloat(this.record.lat),
+      lng: toFloat(this.record.lng),
     }
   }
 
   coordinates() {
     return [{
-      lat: this.record.lat,
-      lng: this.record.lng,
+      lat: toFloat(this.record.lat),
+      lng: toFloat(this.record.lng),
     }];
   }
 

@@ -1,5 +1,6 @@
 import Address from './address';
 import ogcioHelper from "../utils/ogcio-helper.js";
+import { toFloat } from './../utils/util';
 
 export default class OGCIOAddress extends Address {
     constructor(ogcioRecord) {
@@ -52,8 +53,8 @@ export default class OGCIOAddress extends Address {
             lng: 0,
         };
         if (this.record.geo !== undefined && this.record.geo.length > 0) {
-            geo.lat = this.record.geo[0].Latitude;
-            geo.lng = this.record.geo[0].Longitude;
+            geo.lat = toFloat(this.record.geo[0].Latitude);
+            geo.lng = toFloat(this.record.geo[0].Longitude);
         }
         return geo;
     }
@@ -61,8 +62,8 @@ export default class OGCIOAddress extends Address {
     coordinates() {
         if (this.record.geo !== undefined && this.record.geo.length > 0) {
             return this.record.geo.map(geo => ({
-                lat: geo.Latitude,
-                lng: geo.Longitude
+                lat: toFloat(geo.Latitude),
+                lng: toFloat(geo.Longitude)
             }));
         }
         return [];
