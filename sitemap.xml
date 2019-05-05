@@ -3,14 +3,9 @@
 <url> <loc>https://g0vhk-io.github.io/hk-address-parser-lib/help</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="https://g0vhk-io.github.io/hk-address-parser-lib/en/help" /> </url>
 <url> <loc>https://g0vhk-io.github.io/hk-address-parser-lib/index</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="https://g0vhk-io.github.io/hk-address-parser-lib/en/index" /> </url>
 <url> <loc>https://g0vhk-io.github.io/hk-address-parser-lib/users</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> <xhtml:link rel="alternate" hreflang="en" href="https://g0vhk-io.github.io/hk-address-parser-lib/en/users" /> </url>
-<url> <loc>https://g0vhk-io.github.io/hk-address-parser-lib/blog/2017/10/24/new-version-1.0.0</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
-<url> <loc>https://g0vhk-io.github.io/hk-address-parser-lib/blog/2017/09/26/adding-rss</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
-<url> <loc>https://g0vhk-io.github.io/hk-address-parser-lib/blog/2017/09/25/testing-rss</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
-<url> <loc>https://g0vhk-io.github.io/hk-address-parser-lib/blog/2017/04/10/blog-post-two</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
-<url> <loc>https://g0vhk-io.github.io/hk-address-parser-lib/blog/2016/03/11/blog-post</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
-<url> <loc>https://g0vhk-io.github.io/hk-address-parser-lib/docs/doc1</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://g0vhk-io.github.io/hk-address-parser-lib/docs/doc1" /> </url>
-<url> <loc>https://g0vhk-io.github.io/hk-address-parser-lib/docs/doc2</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://g0vhk-io.github.io/hk-address-parser-lib/docs/doc2" /> </url>
 <url> <loc>https://g0vhk-io.github.io/hk-address-parser-lib/docs/doc3</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://g0vhk-io.github.io/hk-address-parser-lib/docs/doc3" /> </url>
+<url> <loc>https://g0vhk-io.github.io/hk-address-parser-lib/docs/example</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://g0vhk-io.github.io/hk-address-parser-lib/docs/example" /> </url>
 <url> <loc>https://g0vhk-io.github.io/hk-address-parser-lib/docs/doc4</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://g0vhk-io.github.io/hk-address-parser-lib/docs/doc4" /> </url>
 <url> <loc>https://g0vhk-io.github.io/hk-address-parser-lib/docs/doc5</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://g0vhk-io.github.io/hk-address-parser-lib/docs/doc5" /> </url>
+<url> <loc>https://g0vhk-io.github.io/hk-address-parser-lib/docs/installation</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://g0vhk-io.github.io/hk-address-parser-lib/docs/installation" /> </url>
 </urlset>
