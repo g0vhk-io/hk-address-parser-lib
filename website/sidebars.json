@@ -1,0 +1,8 @@
+{
+  "docs": {
+    "How To Use": ["installation", "example"]
+  },
+  "docs-other": {
+    "API": ["doc4", "doc5"]
+  }
+}
