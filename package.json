@@ -1,6 +1,6 @@
 {
     "name": "hk-address-parser-lib",
-    "version": "0.2.1",
+    "version": "0.2.4",
     "description": "The library for the HKAddressParser project",
     "author": "",
     "license": "",
@@ -15,7 +15,9 @@
     "module": "dist/hk-address-parser.esm.js",
     "browser": "dist/hk-address-parser.min.js",
     "dependencies": {
-        "cross-fetch": "^3.0.1"
+        "cross-fetch": "^3.0.1",
+        "@turf/turf": "^5.1.6",
+        "proj4": "^2.5.0"
     },
     "devDependencies": {
         "@babel/core": "^7.3.4",
@@ -41,11 +43,6 @@
         "rollup-plugin-terser": "^4.0.4",
         "semver": ">=4.3.2",
         "sinon": "^7.2.7"
-    },
-    "peerDependencies": {
-        "@turf/turf": "^5.1.6",
-        "bluebird": "^3.5.3",
-        "proj4": "^2.5.0"
     },
     "scripts": {
         "build": "rollup -c",
