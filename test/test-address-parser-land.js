@@ -2,17 +2,17 @@ const Promise = require('bluebird');
 const { expect } = require('chai');
 const fs = require('fs');
 
-import Address from './../src/models/address';
+import Address from '../src/models/address';
 import * as sinon from 'sinon';
-import { searchAddressFromLand } from './../src/address-resolver';
-import LandAddress from './../src/models/land-address';
-import { lcs , sortLandResult } from './../src/land-sorter';
+import { searchAddressFromLand, queryMultipleAddress } from '../src/address-resolver';
+import LandAddress from '../src/models/land-address';
+import { lcs, sortLandResult } from '../src/land-sorter';
 
 
 // Create a TestAddress class for testing
 class TestAddress extends Address {
 
-  constructor({lat, lng}) {
+  constructor({ lat, lng }) {
     super();
     this.lat = lat;
     this.lng = lng;
@@ -29,9 +29,9 @@ class TestAddress extends Address {
 describe('address-parser', () => {
   const testCases = {};
   before(() => {
-    const filenames = fs.readdirSync('./test/testcases');
+    const filenames = fs.readdirSync('./test/testcases/land-department');
     filenames.forEach((filename) => {
-      const data = JSON.parse(fs.readFileSync(`./test/testcases/${filename}`).toString());
+      const data = JSON.parse(fs.readFileSync(`./test/testcases/land-department/${filename}`).toString());
       testCases[data.query] = data;
     });
 
@@ -41,11 +41,11 @@ describe('address-parser', () => {
 
         if (url.indexOf(encodeURI(address)) >= 0) {
 
-            return Promise.resolve({
-              json: async () => {
-                return Promise.resolve(testCases[address].data);
-              }
-            });
+          return Promise.resolve({
+            json: async () => {
+              return Promise.resolve(testCases[address].data);
+            }
+          });
         }
       }
     })
@@ -86,12 +86,12 @@ describe('address-parser', () => {
     // The result should be sorted
     let distanceForFirstResult = searchResult[0].distanceTo(targetAddress);
     // Every object should be LandAddress
-    for (let i = 0; i < searchResult.length; i ++) {
-        const result = searchResult[i];
-        expect(result instanceof LandAddress).to.be.equal(true);
-        const distance = result.distanceTo(targetAddress);
-        expect(distance).to.be.not.undefined
-        expect(distance).to.be.not.null
+    for (let i = 0; i < searchResult.length; i++) {
+      const result = searchResult[i];
+      expect(result instanceof LandAddress).to.be.equal(true);
+      const distance = result.distanceTo(targetAddress);
+      expect(distance).to.be.not.undefined
+      expect(distance).to.be.not.null
     }
 
   });
