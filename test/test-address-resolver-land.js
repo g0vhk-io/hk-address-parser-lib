@@ -26,7 +26,7 @@ class TestAddress extends Address {
   }
 };
 
-describe('address-parser', () => {
+describe('address-resolver-land', () => {
   const testCases = {};
   before(() => {
     const filenames = fs.readdirSync('./test/testcases/land-department');
@@ -34,13 +34,13 @@ describe('address-parser', () => {
       const data = JSON.parse(fs.readFileSync(`./test/testcases/land-department/${filename}`).toString());
       testCases[data.query] = data;
     });
+  });
 
+  beforeEach(() => {
     const fetch = sinon.stub(global, 'fetch');
     fetch.callsFake((url) => {
       for (const address of Object.keys(testCases)) {
-
         if (url.indexOf(encodeURI(address)) >= 0) {
-
           return Promise.resolve({
             json: async () => {
               return Promise.resolve(testCases[address].data);
@@ -49,7 +49,11 @@ describe('address-parser', () => {
         }
       }
     })
-  });
+  })
+
+  afterEach(() => {
+    global.fetch.restore();
+  })
 
   it('should return a list of land result', async () => {
 

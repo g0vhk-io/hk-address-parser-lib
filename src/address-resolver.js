@@ -57,7 +57,7 @@ export async function searchAddressFromLand(address) {
     // Some error on the lands data.
     console.error(error.message);
     console.error(error.stack);
-    return Promise.reject(err);
+    return Promise.reject(error);
   }
 
   return sortLandResult(address, landRecords);
@@ -133,9 +133,9 @@ async function queryAddress(address) {
   return landRecords;
 }
 
-export async function queryMultipleAddress(addresses, options) {
+async function batchQueryAddresses(addresses, options = { limit: 10 }) {
   return new Promise((resolve, reject) => {
-    async.parallelLimit(addresses.map(address => queryIteratorFunc(address)), options.limit || 10, (err, results) => {
+    async.parallelLimit(addresses.map(address => queryIteratorFunc(address)), options.limit, (err, results) => {
       if (err) {
         return reject(err);
       }
@@ -147,6 +147,6 @@ export async function queryMultipleAddress(addresses, options) {
 
 
 export default {
-
   queryAddress,
+  batchQueryAddresses,
 }
