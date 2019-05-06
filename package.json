@@ -1,6 +1,6 @@
 {
     "name": "hk-address-parser-lib",
-    "version": "0.2.4",
+    "version": "0.3.0",
     "description": "The library for the HKAddressParser project",
     "author": "",
     "license": "",
@@ -34,6 +34,7 @@
         "md5": "^2.2.1",
         "mocha": "^6.0.2",
         "moment": "^2.24.0",
+        "nyc": "^14.1.0",
         "proj4": "^2.5.0",
         "rollup": "^1.6.0",
         "rollup-plugin-commonjs": "^9.2.1",
@@ -47,7 +48,7 @@
     "scripts": {
         "build": "rollup -c",
         "dev": "rollup -c -w",
-        "test": "BABEL_ENV=test mocha --require @babel/register",
+        "test": "BABEL_ENV=test nyc mocha --require @babel/register",
         "test_accuracy": "npm run build && node accuracy_test/full_test.js"
     },
     "files": [
