@@ -8301,6 +8301,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 });
 
 unwrapExports(async);
+var async_1 = async.parallelLimit;
 
 /**
  * Checks if `value` is the
@@ -8672,7 +8673,7 @@ async function queryAddress(address) {
 
 async function batchQueryAddresses(addresses, options = { limit: 10 }) {
   return new Promise((resolve, reject) => {
-    undefined(addresses.map(address => queryIteratorFunc(address)), options.limit, (err, results) => {
+    async_1(addresses.map(address => queryIteratorFunc(address)), options.limit, (err, results) => {
       if (err) {
         return reject(err);
       }
