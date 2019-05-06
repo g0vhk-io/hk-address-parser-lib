@@ -49,7 +49,8 @@
         "build": "rollup -c",
         "dev": "rollup -c -w",
         "test": "BABEL_ENV=test nyc mocha --require @babel/register",
-        "test_accuracy": "npm run build && node accuracy_test/full_test.js"
+        "test_accuracy": "npm run build && node accuracy_test/full_test.js",
+        "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
     },
     "files": [
         "dist"
