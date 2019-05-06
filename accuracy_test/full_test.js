@@ -47,7 +47,7 @@ function toRad(Value) {
 
 /**
  * Load the test cases from file
- * @param {string} filePath 
+ * @param {string} filePath
  */
 async function readTestCases(filePath) {
   return new Promise((resolve, reject) => {
@@ -141,81 +141,133 @@ function loadFromCache(url) {
 
 // Replace the fetch function
 const nodeFetch = global.fetch;
-global.fetch = function (...args) {
-  const url = args[0];
+const metrics = {
+  loadedFromCache: 0,
+  totalRequest: 0,
+  repeatedRequest: 0,
+  uriHash: {},
+}
 
-  // try to load the cached files
-  const cache = loadFromCache(url);
-  if (cache) {
+const resourceHash = {};
+
+function replaceGlobalFetchWithMemCached() {
+  global.fetch = function (...args) {
+    const url = args[0];
     return new Promise((resolve) => {
       resolve({
-        json: () => JSON.parse(cache)
+        json: () => resourceHash[url]
       });
     });
-  } else {
-    // Hook the function
-    const fn = new Promise((resolve, reject) => {
-      nodeFetch(...args).then(res => {
-        // Overwrite the json()
-        res.json().then(json => {
-          saveToCache(url, json);
-          res.json = () => json;
-          resolve(res);
-        })
-
-      })
-    });
-    return fn;
   }
 }
 
-async function main({ limit = Infinity, outputFile }) {
+function replaceGlobalFetchWithFileCache() {
+  global.fetch = function (...args) {
+    const url = args[0];
+
+    metrics.totalRequest += 1;
+    if (metrics.uriHash[url] === undefined) {
+      metrics.uriHash[url] = 1;
+    } else {
+      metrics.uriHash[url] += 1;
+    }
+
+    // try to load the cached files
+    const cache = loadFromCache(url);
+    if (cache) {
+      metrics.loadedFromCache += 1;
+      resourceHash[url] = JSON.parse(cache);
+      return new Promise((resolve) => {
+        resolve({
+          json: () => JSON.parse(cache)
+        });
+      });
+    } else {
+      // Hook the function
+      const fn = new Promise((resolve, reject) => {
+        nodeFetch(...args).then(res => {
+          // Overwrite the json()
+          res.json().then(json => {
+            saveToCache(url, json);
+            resourceHash[url] = json;
+            res.json = () => json;
+            resolve(res);
+          })
+
+        })
+      });
+      return fn;
+    }
+  }
+}
+
+
+
+async function main({ limit = Infinity, outputFile, verbose = false }) {
   return new Promise(async (resolve, reject) => {
-    const startTime = moment();
+    // In this test we do not want to count the io/network time
+    // So we should dry run the first test data and preload all the required network/file io responses.
+
     const allTestData = await readTestCases(__dirname + '/test_cases/testcases_ogcio_searchable.csv');
-    const result ={ 
-      total: 0
-    }
+    // Replace the fetch with file/network
+    replaceGlobalFetchWithFileCache();
 
-
-    result.date = moment().format('YYYY-MM-DD hh:mm:ss');
-    if (typeof(tag) === 'string' && tag.length > 0) {
-      result.tag = tag;
-    }
-    
-    result.success = 0;
-    result.failed = [];
-
+    // dry run to load all the reponse to memory first
     async.eachOfLimit(allTestData.slice(0, limit), 2000, async (testData) => {
-      result.total += 1;
-      try {
-        const [address, lat, lng] = testData;
-        const jsResult = await runTest(address);      
-        if (checkResult(jsResult, lat, lng)) {
-          result.success += 1;
-        } else {
-          result.failed.push(address);
-        }
-      } catch (error) {
-        error(`Error when running ${testData}`);
-        error(error);
-      }
+      const [address] = testData;
+      await runTest(address);
     }, // callback
-      () => {
-        log(`Finished! Total ${result.total} tests executed .`);
+      async () => {
+        // Real run the test
+        replaceGlobalFetchWithMemCached();
+
+        const startTime = moment();
+        const result ={
+          total: 0
+        }
+        result.date = moment().format('YYYY-MM-DD hh:mm:ss');
+
+
+        result.success = 0;
+        result.failed = [];
+
+        // No concurrent requests allowed
+        // Finish the test cases one by one (all responses should be in memory)
+        for (const testcase of allTestData) {
+          result.total += 1;
+          try {
+            const [address, lat, lng] = testcase;
+            const jsResult = await runTest(address);
+            if (checkResult(jsResult, lat, lng)) {
+              result.success += 1;
+            } else {
+              result.failed.push(address);
+            }
+          } catch (error) {
+            error(`Error when running ${testcase}`);
+            error(error);
+          }
+        }
+
+
         const timeElapsed = moment().diff(startTime, 'ms');
+        log(`Finished! Total ${result.total} tests executed .`);
         log(`Time elapsed: ${timeElapsed}ms`);
+        log(`========================================`);
+        log(`Total Request fired: ${metrics.totalRequest}`);
+        log(`Request cached: ${metrics.loadedFromCache}`);
+        log(`Repeated request: ${metrics.repeatedRequest}`);
+        log(`Average request per query: ${Math.round(metrics.totalRequest * 100/result.total) / 100}`);
         // Write to file
-        
+
         result.success_rate = `${result.success / result.total}`;
 
         if (outputFile) {
           outputResultTofile(result, outputFile);
-        } else {
+        }
+        if (verbose) {
           log(result);
         }
-        
-        
         resolve();
       })
   });
@@ -244,19 +296,18 @@ program
 program
   .description('Run the test cases')
   .option('-o, --output [file]', 'Output the test result to the file, default output to console')
-  .option('-l, --limit [n]', 'Limit the number of test cases to run')  
+  .option('-l, --limit [n]', 'Limit the number of test cases to run')
+  .option('-v, --verbose', 'Show verbose log including the failed cases')
   .parse(process.argv);
 
 
 const outputFile = program.output;
-const tag = program.tag;
-
+const verbose = program.verbose;
 // bitwise flag: | python | node |
 const limit = program.limit || Infinity;
 
-main({ limit, outputFile })
+main({ limit, outputFile, verbose })
   .then((end) => {
-    log('Done');
   })
   .catch((err) => {
     error(err);
