@@ -79,6 +79,8 @@ describe('address-resolver-amoy-garden', () => {
     expect(searchResult[0].componentValueForKey('Street', Address.LANG_EN)).to.be.equal("77 NGAU TAU KOK ROAD");
     expect(searchResult[0].componentValueForKey('District', Address.LANG_EN)).to.be.equal("Kwun Tong District");
     expect(searchResult[0].componentValueForKey('Region', Address.LANG_EN)).to.be.equal("Kowloon");
+
+    expect(searchResult[0].fullAddress(Address.LANG_EN)).to.be.equal("AMOY GARDENS, 77 NGAU TAU KOK ROAD, Kowloon");
   });
 
   it('should return the components in Chinese', async () => {
@@ -95,6 +97,8 @@ describe('address-resolver-amoy-garden', () => {
     expect(searchResult[0].componentValueForKey('Street', Address.LANG_ZH)).to.be.equal("牛頭角道77號");
     expect(searchResult[0].componentValueForKey('District', Address.LANG_ZH)).to.be.equal("觀塘區");
     expect(searchResult[0].componentValueForKey('Region', Address.LANG_ZH)).to.be.equal("九龍");
+
+    expect(searchResult[0].fullAddress(Address.LANG_ZH)).to.be.equal("九龍牛頭角道77號淘大花園");
   });
 
 

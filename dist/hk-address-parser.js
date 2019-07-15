@@ -664,7 +664,7 @@
 
 
   function safeFieldValue(obj, key) {
-    return obj && obj[key] ? obj[key]: '';
+    return obj && obj[key] ? obj[key] : '';
   }
 
   function textForKey(key, lang) {
@@ -737,7 +737,7 @@
       return '';
     }
 
-    if (typeof(record[lang][key]) === 'string') {
+    if (typeof (record[lang][key]) === 'string') {
       return record[lang][key];
     }
 
@@ -759,23 +759,24 @@
    * Format the chinese address from the given result set
    * @param {*} result
    */
-  function fullChineseAddressFromResult (result) {
+  function fullChineseAddressFromResult(result) {
     const { Street, Block, Phase, Estate, Village } = result;
     const region = safeFieldValue(result, 'Region');
     const streetName = safeFieldValue(Street, 'StreetName');
     const streetNumber = chineseBuildingNumberFromField(Street);
     const villageName = safeFieldValue(Village, 'VillageName');
     const villageNumber = chineseBuildingNumberFromField(Village);
+    const estateName = safeFieldValue(Estate, 'EstateName');
     const buildingName = safeFieldValue(result, 'BuildingName');
 
-    return `${region}${villageName}${villageNumber}${streetName}${streetNumber}${buildingName}`.trim();
+    return `${region}${villageName}${villageNumber}${streetName}${streetNumber}${estateName}${buildingName}`.trim();
   }
 
   /**
    * Format the english address from the given result set
    * @param {*} result
    */
-  function fullEnglishAddressFromResult (result) {
+  function fullEnglishAddressFromResult(result) {
     const { Street, Block, Phase, Estate, Village } = result;
     const region = safeFieldValue(result, 'Region');
     const streetName = safeFieldValue(Street, 'StreetName');
@@ -783,7 +784,8 @@
     const villageName = safeFieldValue(Village, 'VillageName');
     const villageNumber = engBuildingNumberFromField(Village);
     const buildingName = safeFieldValue(result, 'BuildingName');
-    return [buildingName,`${streetNumber} ${streetName}`,`${villageNumber} ${villageName}`,region].filter(token => token.match(/\S/)).join(', ');
+    const estateName = safeFieldValue(Estate, 'EstateName');
+    return [buildingName, estateName, `${streetNumber} ${streetName}`, `${villageNumber} ${villageName}`, region].filter(token => token.match(/\S/)).join(', ');
 
   }
 
