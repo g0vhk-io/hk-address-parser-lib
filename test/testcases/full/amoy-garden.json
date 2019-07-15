@@ -1,0 +1,1241 @@
+{
+  "query": "Amoy Gardens Block P",
+  "requests": [
+    {
+      "url": "https://geodata.gov.hk/gs/api/v1.0.0/locationSearch?q=Amoy%20Gardens%20Block%20P",
+      "response": [
+        {
+          "addressZH": "淘大花園",
+          "nameZH": "淘大花園Ｐ座",
+          "x": 840403,
+          "y": 820540,
+          "nameEN": "Amoy Gardens Block P",
+          "addressEN": "AMOY GARDENS"
+        }
+      ]
+    },
+    {
+      "url": "https://www.als.ogcio.gov.hk/lookup?q=Amoy%20Gardens%20Block%20P&n=200",
+      "response": {
+        "RequestAddress": {
+          "AddressLine": [
+            "Amoy Gardens Block P"
+          ]
+        },
+        "SuggestedAddress": [
+          {
+            "Address": {
+              "PremisesAddress": {
+                "EngPremisesAddress": {
+                  "EngBlock": {
+                    "BlockDescriptor": "BLK",
+                    "BlockNo": "P",
+                    "BlockDescriptorPrecedenceIndicator": "Y"
+                  },
+                  "EngEstate": {
+                    "EstateName": "AMOY GARDENS"
+                  },
+                  "EngStreet": {
+                    "StreetName": "NGAU TAU KOK ROAD",
+                    "BuildingNoFrom": "77"
+                  },
+                  "EngDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "Region": "KLN"
+                },
+                "ChiPremisesAddress": {
+                  "Region": "九龍",
+                  "ChiDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "ChiStreet": {
+                    "StreetName": "牛頭角道",
+                    "BuildingNoFrom": "77"
+                  },
+                  "ChiEstate": {
+                    "EstateName": "淘大花園"
+                  },
+                  "ChiBlock": {
+                    "BlockDescriptor": "座",
+                    "BlockNo": "P"
+                  }
+                },
+                "GeospatialInformation": [
+                  {
+                    "Northing": "820539",
+                    "Easting": "840403",
+                    "Latitude": "22.3238",
+                    "Longitude": "114.217"
+                  }
+                ]
+              }
+            },
+            "ValidationInformation": {
+              "ValidationTime": null
+            }
+          },
+          {
+            "Address": {
+              "PremisesAddress": {
+                "EngPremisesAddress": {
+                  "BuildingName": "AMOY PLAZA",
+                  "EngEstate": {
+                    "EstateName": "AMOY GARDENS"
+                  },
+                  "EngStreet": {
+                    "StreetName": "NGAU TAU KOK ROAD",
+                    "BuildingNoFrom": "77"
+                  },
+                  "EngDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "Region": "KLN"
+                },
+                "ChiPremisesAddress": {
+                  "Region": "九龍",
+                  "ChiDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "ChiStreet": {
+                    "StreetName": "牛頭角道",
+                    "BuildingNoFrom": "77"
+                  },
+                  "ChiEstate": {
+                    "EstateName": "淘大花園"
+                  },
+                  "BuildingName": "淘大商場"
+                },
+                "GeospatialInformation": [
+                  {
+                    "Northing": "820565",
+                    "Easting": "840341",
+                    "Latitude": "22.3241",
+                    "Longitude": "114.2164"
+                  },
+                  {
+                    "Northing": "820556",
+                    "Easting": "840416",
+                    "Latitude": "22.324",
+                    "Longitude": "114.2171"
+                  },
+                  {
+                    "Northing": "820649",
+                    "Easting": "840279",
+                    "Latitude": "22.3248",
+                    "Longitude": "114.2158"
+                  },
+                  {
+                    "Northing": "820566",
+                    "Easting": "840394",
+                    "Latitude": "22.3241",
+                    "Longitude": "114.2169"
+                  }
+                ]
+              }
+            },
+            "ValidationInformation": {
+              "ValidationTime": null
+            }
+          },
+          {
+            "Address": {
+              "PremisesAddress": {
+                "EngPremisesAddress": {
+                  "EngBlock": {
+                    "BlockDescriptor": "BLK",
+                    "BlockNo": "B",
+                    "BlockDescriptorPrecedenceIndicator": "Y"
+                  },
+                  "EngEstate": {
+                    "EstateName": "AMOY GARDENS"
+                  },
+                  "EngStreet": {
+                    "StreetName": "NGAU TAU KOK ROAD",
+                    "BuildingNoFrom": "77"
+                  },
+                  "EngDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "Region": "KLN"
+                },
+                "ChiPremisesAddress": {
+                  "Region": "九龍",
+                  "ChiDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "ChiStreet": {
+                    "StreetName": "牛頭角道",
+                    "BuildingNoFrom": "77"
+                  },
+                  "ChiEstate": {
+                    "EstateName": "淘大花園"
+                  },
+                  "ChiBlock": {
+                    "BlockDescriptor": "座",
+                    "BlockNo": "B"
+                  }
+                },
+                "GeospatialInformation": [
+                  {
+                    "Northing": "820652",
+                    "Easting": "840248",
+                    "Latitude": "22.3248",
+                    "Longitude": "114.2155"
+                  }
+                ]
+              }
+            },
+            "ValidationInformation": {
+              "ValidationTime": null
+            }
+          },
+          {
+            "Address": {
+              "PremisesAddress": {
+                "EngPremisesAddress": {
+                  "EngBlock": {
+                    "BlockDescriptor": "BLK",
+                    "BlockNo": "A",
+                    "BlockDescriptorPrecedenceIndicator": "Y"
+                  },
+                  "EngEstate": {
+                    "EstateName": "AMOY GARDENS"
+                  },
+                  "EngStreet": {
+                    "StreetName": "NGAU TAU KOK ROAD",
+                    "BuildingNoFrom": "77"
+                  },
+                  "EngDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "Region": "KLN"
+                },
+                "ChiPremisesAddress": {
+                  "Region": "九龍",
+                  "ChiDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "ChiStreet": {
+                    "StreetName": "牛頭角道",
+                    "BuildingNoFrom": "77"
+                  },
+                  "ChiEstate": {
+                    "EstateName": "淘大花園"
+                  },
+                  "ChiBlock": {
+                    "BlockDescriptor": "座",
+                    "BlockNo": "A"
+                  }
+                },
+                "GeospatialInformation": [
+                  {
+                    "Northing": "820627",
+                    "Easting": "840265",
+                    "Latitude": "22.3246",
+                    "Longitude": "114.2156"
+                  }
+                ]
+              }
+            },
+            "ValidationInformation": {
+              "ValidationTime": null
+            }
+          },
+          {
+            "Address": {
+              "PremisesAddress": {
+                "EngPremisesAddress": {
+                  "EngBlock": {
+                    "BlockDescriptor": "BLK",
+                    "BlockNo": "C",
+                    "BlockDescriptorPrecedenceIndicator": "Y"
+                  },
+                  "EngEstate": {
+                    "EstateName": "AMOY GARDENS"
+                  },
+                  "EngStreet": {
+                    "StreetName": "NGAU TAU KOK ROAD",
+                    "BuildingNoFrom": "77"
+                  },
+                  "EngDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "Region": "KLN"
+                },
+                "ChiPremisesAddress": {
+                  "Region": "九龍",
+                  "ChiDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "ChiStreet": {
+                    "StreetName": "牛頭角道",
+                    "BuildingNoFrom": "77"
+                  },
+                  "ChiEstate": {
+                    "EstateName": "淘大花園"
+                  },
+                  "ChiBlock": {
+                    "BlockDescriptor": "座",
+                    "BlockNo": "C"
+                  }
+                },
+                "GeospatialInformation": [
+                  {
+                    "Northing": "820684",
+                    "Easting": "840253",
+                    "Latitude": "22.3251",
+                    "Longitude": "114.2155"
+                  }
+                ]
+              }
+            },
+            "ValidationInformation": {
+              "ValidationTime": null
+            }
+          },
+          {
+            "Address": {
+              "PremisesAddress": {
+                "EngPremisesAddress": {
+                  "EngBlock": {
+                    "BlockDescriptor": "BLK",
+                    "BlockNo": "D",
+                    "BlockDescriptorPrecedenceIndicator": "Y"
+                  },
+                  "EngEstate": {
+                    "EstateName": "AMOY GARDENS"
+                  },
+                  "EngStreet": {
+                    "StreetName": "NGAU TAU KOK ROAD",
+                    "BuildingNoFrom": "77"
+                  },
+                  "EngDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "Region": "KLN"
+                },
+                "ChiPremisesAddress": {
+                  "Region": "九龍",
+                  "ChiDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "ChiStreet": {
+                    "StreetName": "牛頭角道",
+                    "BuildingNoFrom": "77"
+                  },
+                  "ChiEstate": {
+                    "EstateName": "淘大花園"
+                  },
+                  "ChiBlock": {
+                    "BlockDescriptor": "座",
+                    "BlockNo": "D"
+                  }
+                },
+                "GeospatialInformation": [
+                  {
+                    "Northing": "820700",
+                    "Easting": "840276",
+                    "Latitude": "22.3253",
+                    "Longitude": "114.2157"
+                  }
+                ]
+              }
+            },
+            "ValidationInformation": {
+              "ValidationTime": null
+            }
+          },
+          {
+            "Address": {
+              "PremisesAddress": {
+                "EngPremisesAddress": {
+                  "EngBlock": {
+                    "BlockDescriptor": "BLK",
+                    "BlockNo": "E",
+                    "BlockDescriptorPrecedenceIndicator": "Y"
+                  },
+                  "EngEstate": {
+                    "EstateName": "AMOY GARDENS"
+                  },
+                  "EngStreet": {
+                    "StreetName": "NGAU TAU KOK ROAD",
+                    "BuildingNoFrom": "77"
+                  },
+                  "EngDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "Region": "KLN"
+                },
+                "ChiPremisesAddress": {
+                  "Region": "九龍",
+                  "ChiDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "ChiStreet": {
+                    "StreetName": "牛頭角道",
+                    "BuildingNoFrom": "77"
+                  },
+                  "ChiEstate": {
+                    "EstateName": "淘大花園"
+                  },
+                  "ChiBlock": {
+                    "BlockDescriptor": "座",
+                    "BlockNo": "E"
+                  }
+                },
+                "GeospatialInformation": [
+                  {
+                    "Northing": "820696",
+                    "Easting": "840310",
+                    "Latitude": "22.3252",
+                    "Longitude": "114.2161"
+                  }
+                ]
+              }
+            },
+            "ValidationInformation": {
+              "ValidationTime": null
+            }
+          },
+          {
+            "Address": {
+              "PremisesAddress": {
+                "EngPremisesAddress": {
+                  "EngBlock": {
+                    "BlockDescriptor": "BLK",
+                    "BlockNo": "F",
+                    "BlockDescriptorPrecedenceIndicator": "Y"
+                  },
+                  "EngEstate": {
+                    "EstateName": "AMOY GARDENS"
+                  },
+                  "EngStreet": {
+                    "StreetName": "NGAU TAU KOK ROAD",
+                    "BuildingNoFrom": "77"
+                  },
+                  "EngDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "Region": "KLN"
+                },
+                "ChiPremisesAddress": {
+                  "Region": "九龍",
+                  "ChiDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "ChiStreet": {
+                    "StreetName": "牛頭角道",
+                    "BuildingNoFrom": "77"
+                  },
+                  "ChiEstate": {
+                    "EstateName": "淘大花園"
+                  },
+                  "ChiBlock": {
+                    "BlockDescriptor": "座",
+                    "BlockNo": "F"
+                  }
+                },
+                "GeospatialInformation": [
+                  {
+                    "Northing": "820668",
+                    "Easting": "840322",
+                    "Latitude": "22.325",
+                    "Longitude": "114.2162"
+                  }
+                ]
+              }
+            },
+            "ValidationInformation": {
+              "ValidationTime": null
+            }
+          },
+          {
+            "Address": {
+              "PremisesAddress": {
+                "EngPremisesAddress": {
+                  "EngBlock": {
+                    "BlockDescriptor": "BLK",
+                    "BlockNo": "G",
+                    "BlockDescriptorPrecedenceIndicator": "Y"
+                  },
+                  "EngEstate": {
+                    "EstateName": "AMOY GARDENS"
+                  },
+                  "EngStreet": {
+                    "StreetName": "NGAU TAU KOK ROAD",
+                    "BuildingNoFrom": "77"
+                  },
+                  "EngDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "Region": "KLN"
+                },
+                "ChiPremisesAddress": {
+                  "Region": "九龍",
+                  "ChiDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "ChiStreet": {
+                    "StreetName": "牛頭角道",
+                    "BuildingNoFrom": "77"
+                  },
+                  "ChiEstate": {
+                    "EstateName": "淘大花園"
+                  },
+                  "ChiBlock": {
+                    "BlockDescriptor": "座",
+                    "BlockNo": "G"
+                  }
+                },
+                "GeospatialInformation": [
+                  {
+                    "Northing": "820636",
+                    "Easting": "840309",
+                    "Latitude": "22.3247",
+                    "Longitude": "114.2161"
+                  }
+                ]
+              }
+            },
+            "ValidationInformation": {
+              "ValidationTime": null
+            }
+          },
+          {
+            "Address": {
+              "PremisesAddress": {
+                "EngPremisesAddress": {
+                  "EngBlock": {
+                    "BlockDescriptor": "BLK",
+                    "BlockNo": "H",
+                    "BlockDescriptorPrecedenceIndicator": "Y"
+                  },
+                  "EngEstate": {
+                    "EstateName": "AMOY GARDENS"
+                  },
+                  "EngStreet": {
+                    "StreetName": "NGAU TAU KOK ROAD",
+                    "BuildingNoFrom": "77"
+                  },
+                  "EngDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "Region": "KLN"
+                },
+                "ChiPremisesAddress": {
+                  "Region": "九龍",
+                  "ChiDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "ChiStreet": {
+                    "StreetName": "牛頭角道",
+                    "BuildingNoFrom": "77"
+                  },
+                  "ChiEstate": {
+                    "EstateName": "淘大花園"
+                  },
+                  "ChiBlock": {
+                    "BlockDescriptor": "座",
+                    "BlockNo": "H"
+                  }
+                },
+                "GeospatialInformation": [
+                  {
+                    "Northing": "820605",
+                    "Easting": "840302",
+                    "Latitude": "22.3244",
+                    "Longitude": "114.216"
+                  }
+                ]
+              }
+            },
+            "ValidationInformation": {
+              "ValidationTime": null
+            }
+          },
+          {
+            "Address": {
+              "PremisesAddress": {
+                "EngPremisesAddress": {
+                  "EngBlock": {
+                    "BlockDescriptor": "BLK",
+                    "BlockNo": "I",
+                    "BlockDescriptorPrecedenceIndicator": "Y"
+                  },
+                  "EngEstate": {
+                    "EstateName": "AMOY GARDENS"
+                  },
+                  "EngStreet": {
+                    "StreetName": "NGAU TAU KOK ROAD",
+                    "BuildingNoFrom": "77"
+                  },
+                  "EngDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "Region": "KLN"
+                },
+                "ChiPremisesAddress": {
+                  "Region": "九龍",
+                  "ChiDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "ChiStreet": {
+                    "StreetName": "牛頭角道",
+                    "BuildingNoFrom": "77"
+                  },
+                  "ChiEstate": {
+                    "EstateName": "淘大花園"
+                  },
+                  "ChiBlock": {
+                    "BlockDescriptor": "座",
+                    "BlockNo": "I"
+                  }
+                },
+                "GeospatialInformation": [
+                  {
+                    "Northing": "820574",
+                    "Easting": "840298",
+                    "Latitude": "22.3241",
+                    "Longitude": "114.2159"
+                  }
+                ]
+              }
+            },
+            "ValidationInformation": {
+              "ValidationTime": null
+            }
+          },
+          {
+            "Address": {
+              "PremisesAddress": {
+                "EngPremisesAddress": {
+                  "EngBlock": {
+                    "BlockDescriptor": "BLK",
+                    "BlockNo": "J",
+                    "BlockDescriptorPrecedenceIndicator": "Y"
+                  },
+                  "EngEstate": {
+                    "EstateName": "AMOY GARDENS"
+                  },
+                  "EngStreet": {
+                    "StreetName": "NGAU TAU KOK ROAD",
+                    "BuildingNoFrom": "77"
+                  },
+                  "EngDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "Region": "KLN"
+                },
+                "ChiPremisesAddress": {
+                  "Region": "九龍",
+                  "ChiDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "ChiStreet": {
+                    "StreetName": "牛頭角道",
+                    "BuildingNoFrom": "77"
+                  },
+                  "ChiEstate": {
+                    "EstateName": "淘大花園"
+                  },
+                  "ChiBlock": {
+                    "BlockDescriptor": "座",
+                    "BlockNo": "J"
+                  }
+                },
+                "GeospatialInformation": [
+                  {
+                    "Northing": "820551",
+                    "Easting": "840314",
+                    "Latitude": "22.3239",
+                    "Longitude": "114.2161"
+                  }
+                ]
+              }
+            },
+            "ValidationInformation": {
+              "ValidationTime": null
+            }
+          },
+          {
+            "Address": {
+              "PremisesAddress": {
+                "EngPremisesAddress": {
+                  "EngBlock": {
+                    "BlockDescriptor": "BLK",
+                    "BlockNo": "K",
+                    "BlockDescriptorPrecedenceIndicator": "Y"
+                  },
+                  "EngEstate": {
+                    "EstateName": "AMOY GARDENS"
+                  },
+                  "EngStreet": {
+                    "StreetName": "NGAU TAU KOK ROAD",
+                    "BuildingNoFrom": "77"
+                  },
+                  "EngDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "Region": "KLN"
+                },
+                "ChiPremisesAddress": {
+                  "Region": "九龍",
+                  "ChiDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "ChiStreet": {
+                    "StreetName": "牛頭角道",
+                    "BuildingNoFrom": "77"
+                  },
+                  "ChiEstate": {
+                    "EstateName": "淘大花園"
+                  },
+                  "ChiBlock": {
+                    "BlockDescriptor": "座",
+                    "BlockNo": "K"
+                  }
+                },
+                "GeospatialInformation": [
+                  {
+                    "Northing": "820528",
+                    "Easting": "840330",
+                    "Latitude": "22.3237",
+                    "Longitude": "114.2163"
+                  }
+                ]
+              }
+            },
+            "ValidationInformation": {
+              "ValidationTime": null
+            }
+          },
+          {
+            "Address": {
+              "PremisesAddress": {
+                "EngPremisesAddress": {
+                  "EngBlock": {
+                    "BlockDescriptor": "BLK",
+                    "BlockNo": "L",
+                    "BlockDescriptorPrecedenceIndicator": "Y"
+                  },
+                  "EngEstate": {
+                    "EstateName": "AMOY GARDENS"
+                  },
+                  "EngStreet": {
+                    "StreetName": "NGAU TAU KOK ROAD",
+                    "BuildingNoFrom": "77"
+                  },
+                  "EngDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "Region": "KLN"
+                },
+                "ChiPremisesAddress": {
+                  "Region": "九龍",
+                  "ChiDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "ChiStreet": {
+                    "StreetName": "牛頭角道",
+                    "BuildingNoFrom": "77"
+                  },
+                  "ChiEstate": {
+                    "EstateName": "淘大花園"
+                  },
+                  "ChiBlock": {
+                    "BlockDescriptor": "座",
+                    "BlockNo": "L"
+                  }
+                },
+                "GeospatialInformation": [
+                  {
+                    "Northing": "820621",
+                    "Easting": "840350",
+                    "Latitude": "22.3246",
+                    "Longitude": "114.2165"
+                  }
+                ]
+              }
+            },
+            "ValidationInformation": {
+              "ValidationTime": null
+            }
+          },
+          {
+            "Address": {
+              "PremisesAddress": {
+                "EngPremisesAddress": {
+                  "EngBlock": {
+                    "BlockDescriptor": "BLK",
+                    "BlockNo": "M",
+                    "BlockDescriptorPrecedenceIndicator": "Y"
+                  },
+                  "EngEstate": {
+                    "EstateName": "AMOY GARDENS"
+                  },
+                  "EngStreet": {
+                    "StreetName": "NGAU TAU KOK ROAD",
+                    "BuildingNoFrom": "77"
+                  },
+                  "EngDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "Region": "KLN"
+                },
+                "ChiPremisesAddress": {
+                  "Region": "九龍",
+                  "ChiDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "ChiStreet": {
+                    "StreetName": "牛頭角道",
+                    "BuildingNoFrom": "77"
+                  },
+                  "ChiEstate": {
+                    "EstateName": "淘大花園"
+                  },
+                  "ChiBlock": {
+                    "BlockDescriptor": "座",
+                    "BlockNo": "M"
+                  }
+                },
+                "GeospatialInformation": [
+                  {
+                    "Northing": "820604",
+                    "Easting": "840360",
+                    "Latitude": "22.3244",
+                    "Longitude": "114.2165"
+                  }
+                ]
+              }
+            },
+            "ValidationInformation": {
+              "ValidationTime": null
+            }
+          },
+          {
+            "Address": {
+              "PremisesAddress": {
+                "EngPremisesAddress": {
+                  "EngBlock": {
+                    "BlockDescriptor": "BLK",
+                    "BlockNo": "N",
+                    "BlockDescriptorPrecedenceIndicator": "Y"
+                  },
+                  "EngEstate": {
+                    "EstateName": "AMOY GARDENS"
+                  },
+                  "EngStreet": {
+                    "StreetName": "NGAU TAU KOK ROAD",
+                    "BuildingNoFrom": "77"
+                  },
+                  "EngDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "Region": "KLN"
+                },
+                "ChiPremisesAddress": {
+                  "Region": "九龍",
+                  "ChiDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "ChiStreet": {
+                    "StreetName": "牛頭角道",
+                    "BuildingNoFrom": "77"
+                  },
+                  "ChiEstate": {
+                    "EstateName": "淘大花園"
+                  },
+                  "ChiBlock": {
+                    "BlockDescriptor": "座",
+                    "BlockNo": "N"
+                  }
+                },
+                "GeospatialInformation": [
+                  {
+                    "Northing": "820580",
+                    "Easting": "840376",
+                    "Latitude": "22.3242",
+                    "Longitude": "114.2167"
+                  }
+                ]
+              }
+            },
+            "ValidationInformation": {
+              "ValidationTime": null
+            }
+          },
+          {
+            "Address": {
+              "PremisesAddress": {
+                "EngPremisesAddress": {
+                  "EngBlock": {
+                    "BlockDescriptor": "BLK",
+                    "BlockNo": "O",
+                    "BlockDescriptorPrecedenceIndicator": "Y"
+                  },
+                  "EngEstate": {
+                    "EstateName": "AMOY GARDENS"
+                  },
+                  "EngStreet": {
+                    "StreetName": "NGAU TAU KOK ROAD",
+                    "BuildingNoFrom": "77"
+                  },
+                  "EngDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "Region": "KLN"
+                },
+                "ChiPremisesAddress": {
+                  "Region": "九龍",
+                  "ChiDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "ChiStreet": {
+                    "StreetName": "牛頭角道",
+                    "BuildingNoFrom": "77"
+                  },
+                  "ChiEstate": {
+                    "EstateName": "淘大花園"
+                  },
+                  "ChiBlock": {
+                    "BlockDescriptor": "座",
+                    "BlockNo": "O"
+                  }
+                },
+                "GeospatialInformation": [
+                  {
+                    "Northing": "820557",
+                    "Easting": "840393",
+                    "Latitude": "22.324",
+                    "Longitude": "114.2169"
+                  }
+                ]
+              }
+            },
+            "ValidationInformation": {
+              "ValidationTime": null
+            }
+          },
+          {
+            "Address": {
+              "PremisesAddress": {
+                "EngPremisesAddress": {
+                  "EngBlock": {
+                    "BlockDescriptor": "BLK",
+                    "BlockNo": "Q",
+                    "BlockDescriptorPrecedenceIndicator": "Y"
+                  },
+                  "EngEstate": {
+                    "EstateName": "AMOY GARDENS"
+                  },
+                  "EngStreet": {
+                    "StreetName": "NGAU TAU KOK ROAD",
+                    "BuildingNoFrom": "77"
+                  },
+                  "EngDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "Region": "KLN"
+                },
+                "ChiPremisesAddress": {
+                  "Region": "九龍",
+                  "ChiDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "ChiStreet": {
+                    "StreetName": "牛頭角道",
+                    "BuildingNoFrom": "77"
+                  },
+                  "ChiEstate": {
+                    "EstateName": "淘大花園"
+                  },
+                  "ChiBlock": {
+                    "BlockDescriptor": "座",
+                    "BlockNo": "Q"
+                  }
+                },
+                "GeospatialInformation": [
+                  {
+                    "Northing": "820628",
+                    "Easting": "840407",
+                    "Latitude": "22.3246",
+                    "Longitude": "114.217"
+                  }
+                ]
+              }
+            },
+            "ValidationInformation": {
+              "ValidationTime": null
+            }
+          },
+          {
+            "Address": {
+              "PremisesAddress": {
+                "EngPremisesAddress": {
+                  "EngBlock": {
+                    "BlockDescriptor": "BLK",
+                    "BlockNo": "R",
+                    "BlockDescriptorPrecedenceIndicator": "Y"
+                  },
+                  "EngEstate": {
+                    "EstateName": "AMOY GARDENS"
+                  },
+                  "EngStreet": {
+                    "StreetName": "NGAU TAU KOK ROAD",
+                    "BuildingNoFrom": "77"
+                  },
+                  "EngDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "Region": "KLN"
+                },
+                "ChiPremisesAddress": {
+                  "Region": "九龍",
+                  "ChiDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "ChiStreet": {
+                    "StreetName": "牛頭角道",
+                    "BuildingNoFrom": "77"
+                  },
+                  "ChiEstate": {
+                    "EstateName": "淘大花園"
+                  },
+                  "ChiBlock": {
+                    "BlockDescriptor": "座",
+                    "BlockNo": "R"
+                  }
+                },
+                "GeospatialInformation": [
+                  {
+                    "Northing": "820603",
+                    "Easting": "840424",
+                    "Latitude": "22.3244",
+                    "Longitude": "114.2172"
+                  }
+                ]
+              }
+            },
+            "ValidationInformation": {
+              "ValidationTime": null
+            }
+          },
+          {
+            "Address": {
+              "PremisesAddress": {
+                "EngPremisesAddress": {
+                  "EngBlock": {
+                    "BlockDescriptor": "BLK",
+                    "BlockNo": "S",
+                    "BlockDescriptorPrecedenceIndicator": "Y"
+                  },
+                  "EngEstate": {
+                    "EstateName": "AMOY GARDENS"
+                  },
+                  "EngStreet": {
+                    "StreetName": "NGAU TAU KOK ROAD",
+                    "BuildingNoFrom": "77"
+                  },
+                  "EngDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "Region": "KLN"
+                },
+                "ChiPremisesAddress": {
+                  "Region": "九龍",
+                  "ChiDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "ChiStreet": {
+                    "StreetName": "牛頭角道",
+                    "BuildingNoFrom": "77"
+                  },
+                  "ChiEstate": {
+                    "EstateName": "淘大花園"
+                  },
+                  "ChiBlock": {
+                    "BlockDescriptor": "座",
+                    "BlockNo": "S"
+                  }
+                },
+                "GeospatialInformation": [
+                  {
+                    "Northing": "820578",
+                    "Easting": "840440",
+                    "Latitude": "22.3242",
+                    "Longitude": "114.2173"
+                  }
+                ]
+              }
+            },
+            "ValidationInformation": {
+              "ValidationTime": null
+            }
+          },
+          {
+            "Address": {
+              "PremisesAddress": {
+                "EngPremisesAddress": {
+                  "EngEstate": {
+                    "EstateName": "AMOY GARDENS"
+                  },
+                  "EngStreet": {
+                    "StreetName": "NGAU TAU KOK ROAD",
+                    "BuildingNoFrom": "77"
+                  },
+                  "EngDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "Region": "KLN"
+                },
+                "ChiPremisesAddress": {
+                  "Region": "九龍",
+                  "ChiDistrict": {
+                    "DcDistrict": "KT"
+                  },
+                  "ChiStreet": {
+                    "StreetName": "牛頭角道",
+                    "BuildingNoFrom": "77"
+                  },
+                  "ChiEstate": {
+                    "EstateName": "淘大花園"
+                  }
+                },
+                "GeospatialInformation": [
+                  {
+                    "Northing": "820566",
+                    "Easting": "840394",
+                    "Latitude": "22.3241",
+                    "Longitude": "114.2169"
+                  }
+                ]
+              }
+            },
+            "ValidationInformation": {
+              "ValidationTime": null
+            }
+          },
+          {
+            "Address": {
+              "PremisesAddress": {
+                "EngPremisesAddress": {
+                  "BuildingName": "PO NGAI GARDEN",
+                  "EngStreet": {
+                    "StreetName": "AMOY STREET",
+                    "BuildingNoFrom": "30"
+                  },
+                  "EngDistrict": {
+                    "DcDistrict": "WC"
+                  },
+                  "Region": "HK"
+                },
+                "ChiPremisesAddress": {
+                  "Region": "香港",
+                  "ChiDistrict": {
+                    "DcDistrict": "WC"
+                  },
+                  "ChiStreet": {
+                    "StreetName": "廈門街",
+                    "BuildingNoFrom": "30"
+                  },
+                  "BuildingName": "寶藝花園"
+                },
+                "GeospatialInformation": [
+                  {
+                    "Northing": "815233",
+                    "Easting": "835787",
+                    "Latitude": "22.2759",
+                    "Longitude": "114.1722"
+                  }
+                ]
+              }
+            },
+            "ValidationInformation": {
+              "ValidationTime": null
+            }
+          },
+          {
+            "Address": {
+              "PremisesAddress": {
+                "EngPremisesAddress": {
+                  "BuildingName": "AMOY BUILDING",
+                  "EngStreet": {
+                    "StreetName": "AMOY STREET",
+                    "BuildingNoFrom": "29"
+                  },
+                  "EngDistrict": {
+                    "DcDistrict": "WC"
+                  },
+                  "Region": "HK"
+                },
+                "ChiPremisesAddress": {
+                  "Region": "香港",
+                  "ChiDistrict": {
+                    "DcDistrict": "WC"
+                  },
+                  "ChiStreet": {
+                    "StreetName": "廈門街",
+                    "BuildingNoFrom": "29"
+                  },
+                  "BuildingName": "廈門樓"
+                },
+                "GeospatialInformation": [
+                  {
+                    "Northing": "815238",
+                    "Easting": "835768",
+                    "Latitude": "22.276",
+                    "Longitude": "114.172"
+                  }
+                ]
+              }
+            },
+            "ValidationInformation": {
+              "ValidationTime": null
+            }
+          },
+          {
+            "Address": {
+              "PremisesAddress": {
+                "EngPremisesAddress": {
+                  "BuildingName": "AMOY BUILDING",
+                  "EngStreet": {
+                    "StreetName": "AMOY STREET",
+                    "BuildingNoFrom": "31"
+                  },
+                  "EngDistrict": {
+                    "DcDistrict": "WC"
+                  },
+                  "Region": "HK"
+                },
+                "ChiPremisesAddress": {
+                  "Region": "香港",
+                  "ChiDistrict": {
+                    "DcDistrict": "WC"
+                  },
+                  "ChiStreet": {
+                    "StreetName": "廈門街",
+                    "BuildingNoFrom": "31"
+                  },
+                  "BuildingName": "廈門樓"
+                },
+                "GeospatialInformation": [
+                  {
+                    "Northing": "815238",
+                    "Easting": "835768",
+                    "Latitude": "22.276",
+                    "Longitude": "114.172"
+                  }
+                ]
+              }
+            },
+            "ValidationInformation": {
+              "ValidationTime": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

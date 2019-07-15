@@ -703,7 +703,7 @@
     if (lang === 'chi') {
       return `${blockObj.BlockNo}${blockObj.BlockDescriptor}`;
     } else if (lang === 'eng') {
-      return `${blockObj.BlockDescriptor}${blockObj.BlockNo}`;
+      return `${blockObj.BlockDescriptor} ${blockObj.BlockNo}`;
     }
   }
 
