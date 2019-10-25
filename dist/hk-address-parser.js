@@ -1,7 +1,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@turf/turf'), require('proj4')) :
   typeof define === 'function' && define.amd ? define(['exports', '@turf/turf', 'proj4'], factory) :
-  (global = global || self, factory(global['hk-address-parser'] = {}, global.turf, global.proj4));
+  (global = global || self, factory(global.hkAddressParser = {}, global.turf, global.proj4));
 }(this, function (exports, turf, proj4) { 'use strict';
 
   proj4 = proj4 && proj4.hasOwnProperty('default') ? proj4['default'] : proj4;

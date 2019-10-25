@@ -11,7 +11,7 @@ export default [
     input: "src/main.js",
     external: ["proj4", "@turf/turf"],
     output: {
-      name: "hk-address-parser",
+      name: "hkAddressParser",
       file: "dist/hk-address-parser.js",
       format: "umd",
       globals: {
@@ -36,7 +36,7 @@ export default [
     input: "src/main.js",
     external: ["proj4", "@turf/turf"],
     output: {
-      name: "hk-address-parser",
+      name: "hkAddressParser",
       file: pkg.browser,
       format: "umd",
       globals: {
