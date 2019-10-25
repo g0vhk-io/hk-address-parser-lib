@@ -38,27 +38,25 @@ async function searchAddressWithOGCIO(address) {
 
 export async function searchAddressFromLand(address) {
   const landsURL = `https://geodata.gov.hk/gs/api/v1.0.0/locationSearch?q=${encodeURI(address)}`;
-  const landsRes = await fetch(landsURL, {
+  const landRecords = await fetch(landsURL, {
     method: "GET",
     mode: "cors",
-  });
-  const landRecords = [];
-
-  try {
-    const landsData = await landsRes.json();
-    for (const data of landsData) {
-      let wgsLng, wgslat;
-      [wgsLng, wgslat] = ProjConvertor.projTransform("EPSG:2326", "EPSG:4326", [data.x, data.y]);
-      data.lat = Number.parseFloat(wgslat).toFixed(4);
-      data.lng = Number.parseFloat(wgsLng).toFixed(4);
-      landRecords.push(AddressFactory.createAddress("land", data));
-    }
-  } catch (error) {
-    // Some error on the lands data.
-    console.error(error.message);
-    console.error(error.stack);
-    return Promise.reject(error);
-  }
+  })
+      .then((resp) => resp.json())
+      .then((landsData) => landsData.map((data) => {
+          const [wgsLng, wgslat] = ProjConvertor.projTransform("EPSG:2326", "EPSG:4326", [data.x, data.y]);
+          const mapData = {
+              ...data,
+              lat: Number.parseFloat(wgslat).toFixed(4),
+              lng: Number.parseFloat(wgsLng).toFixed(4),
+          };
+          return AddressFactory.createAddress("land", mapData);
+      }))
+      .catch((error) => {
+          console.error(error.message);
+          console.error(error.stack);
+          throw error;
+      });
 
   return sortLandResult(address, landRecords);
 }
