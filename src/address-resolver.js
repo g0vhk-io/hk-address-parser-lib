@@ -15,25 +15,19 @@ const NEAR_THRESHOLD = 0.05; // 50 metre
  * @returns Promise<Address[]>
  */
 async function searchAddressWithOGCIO(address) {
-  let results = [];
-  try {
-    const ogcioURL = `https://www.als.ogcio.gov.hk/lookup?q=${encodeURI(address)}&n=${OGCIO_RECORD_COUNT}`;
-    const ogcioRes = await fetch(ogcioURL, {
-      method: "GET",
-      mode: "cors",
-      headers: {
-        "Accept": "application/json",
-        "Accept-Language": "en,zh-Hant",
-        "Accept-Encoding": "gzip",
-      }
-    });
-    const ogcioData = await ogcioRes.json();
-    results = (ogcioParser.searchResult(address, ogcioData)).map(record => AddressFactory.createAddress("ogcio", record));
-  } catch (err) {
-    console.error(err);
-    return Promise.reject(err);
-  }
-  return Promise.resolve(results);
+  const ogcioURL = `https://www.als.ogcio.gov.hk/lookup?q=${encodeURIComponent(address)}&n=${OGCIO_RECORD_COUNT}`;
+  const ogcioRes = await fetch(ogcioURL, {
+    method: "GET",
+    mode: "cors",
+    headers: {
+      "Accept": "application/json",
+      "Accept-Language": "en,zh-Hant",
+      "Accept-Encoding": "gzip",
+    }
+  });
+  const ogcioData = await ogcioRes.json();
+  return ogcioParser.searchResult(address, ogcioData)
+    .map(record => AddressFactory.createAddress("ogcio", record));
 }
 
 export async function searchAddressFromLand(address) {
